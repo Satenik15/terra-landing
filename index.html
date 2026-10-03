@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Terra & Bean — Small-Batch Coffee Roastery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Terra & Bean</div>
+      <nav id="nav">
+        <a href="#process">Our Process</a>
+        <a href="#products">Shop</a>
+        <a onclick="openModal()">Subscribe</a>
+      </nav>
+      <button
+        class="menu-btn"
+        aria-label="Open menu"
+        onclick="document.getElementById('nav').classList.toggle('open')"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="wrap hero">
+      <div>
+        <h1>Coffee roasted the morning it ships.</h1>
+        <p>
+          Small-batch beans from three family farms, roasted to order in our
+          Yerevan roastery — never sitting on a shelf before it reaches you.
+        </p>
+        <div class="cta-row">
+          <button
+            class="btn"
+            onclick="
+              document
+                .getElementById('products')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Shop this week's roast
+          </button>
+          <a href="#process" class="link-under">See how we roast</a>
+        </div>
+      </div>
+      <div class="bag"></div>
+    </div>
+
+    <div class="wrap rule"></div>
+
+    <div class="wrap process" id="process">
+      <div class="intro">
+        <h2>From farm to cup, in four steps</h2>
+      </div>
+      <div class="step">
+        <div class="num">01</div>
+        <h3>Sourced directly</h3>
+        <p>
+          We buy green beans straight from growers in Ethiopia, Guatemala, and
+          Colombia — no brokers in between.
+        </p>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <h3>Roasted in small batches</h3>
+        <p>
+          12kg at a time, on a vintage drum roaster, tracked by ear and by
+          temperature curve.
+        </p>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <h3>Rested, then packed</h3>
+        <p>
+          Beans rest 48 hours to let CO₂ escape, then go straight into one-way
+          valve bags.
+        </p>
+      </div>
+    </div>
+
+    <div class="products" id="products">
+      <div class="wrap">
+        <div class="intro">
+          <h2>This week's roasts</h2>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="swatch light"></div>
+            <h3>Yirgacheffe — Light Roast</h3>
+            <p style="font-size: 0.9rem; opacity: 0.75">
+              Floral, bergamot, bright acidity
+            </p>
+            <div class="price">$18 / 340g</div>
+          </div>
+          <div class="card">
+            <div class="swatch med"></div>
+            <h3>Huehuetenango — Medium</h3>
+            <p style="font-size: 0.9rem; opacity: 0.75">
+              Caramel, red apple, balanced
+            </p>
+            <div class="price">$17 / 340g</div>
+          </div>
+          <div class="card">
+            <div class="swatch dark"></div>
+            <h3>Nariño — Dark Roast</h3>
+            <p style="font-size: 0.9rem; opacity: 0.75">
+              Dark cocoa, toasted walnut
+            </p>
+            <div class="price">$16 / 340g</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote wrap">
+      <blockquote>
+        "The only subscription I've kept for two years straight. It tastes
+        different every time, in a good way."
+      </blockquote>
+      <cite>— Ani M., subscriber since 2024</cite>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot-top">
+          <h2>Get next week's roast before it sells out.</h2>
+          <button class="btn" onclick="openModal()">
+            Join the subscription
+          </button>
+        </div>
+        <div class="foot-bottom">
+          <span>© 2026 Terra & Bean Roastery, Yerevan</span>
+          <span>Sample project — built to demonstrate responsive HTML/CSS</span>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="overlay"
+      id="overlay"
+      onclick="if (event.target === this) closeModal();"
+    >
+      <div class="modal">
+        <button class="modal-close" aria-label="Close" onclick="closeModal()">
+          &times;
+        </button>
+        <div id="modal-form">
+          <h3>Join the subscription</h3>
+          <p>One bag a month, roasted to order. Cancel anytime.</p>
+          <input
+            type="email"
+            id="modal-email"
+            placeholder="you@email.com"
+            required
+          />
+          <button class="btn" onclick="submitModal()">Subscribe</button>
+        </div>
+        <div class="success" id="modal-success">
+          You're on the list ☕<br /><span
+            style="
+              font-size: 0.85rem;
+              opacity: 0.7;
+              font-family: &quot;Inter&quot;, sans-serif;
+            "
+            >We'll email you before the next roast ships.</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
